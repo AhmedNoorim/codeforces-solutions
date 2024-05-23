@@ -15,7 +15,3 @@ The solutions are implemented using the following programming languages:
 
 -   **C++**
 -   **Python**
-
-## Repository Structure
-
-The repository is organized by problem sets. Each problem set folder contains solutions to individual problems.
