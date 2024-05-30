@@ -1,22 +1,25 @@
 # Cut Ribbon
 
-array = [int(num) for num in input().split(" ")]
-
-length = array[0]
-pieces = array[1:]
-
-summation = 0
-count = 0
-
-for i in range(len(pieces)):
-    if length % pieces[i] == 0 and i != len(pieces) - 1 and pieces[i] < pieces[i + 1]:
-        count += length // pieces[i]
-        break
-    elif length % pieces[i] == 0 and i != len(pieces) - 1:
-        continue
-    else:
-        count += length // pieces[i]
-        length = length % pieces[i]
+length, a, b, c = [int(num) for num in input().split(" ")]
 
 
-print(count)
+steps = 0
+rem = length
+
+a_count = 0
+while a_count * a <= length:
+
+    b_count = 0
+    while a_count * a + b_count * b <= length:
+
+        rem = length - a_count * a - b_count * b
+        if rem % c == 0:
+            c_count = rem // c
+
+            total = a_count + b_count + c_count
+            steps = max(total, steps)
+
+        b_count += 1
+    a_count += 1
+
+print(steps)
