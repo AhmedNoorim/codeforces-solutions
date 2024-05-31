@@ -1,4 +1,5 @@
 # Cut Ribbon
+# link: https://codeforces.com/problemset/problem/189/A
 
 length, a, b, c = [int(num) for num in input().split(" ")]
 
